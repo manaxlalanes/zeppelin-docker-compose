@@ -1,0 +1,13 @@
+version: '3'
+services:
+  zeppelin:
+    environment:
+      - ZEPPELIN_LOG_DIR=/logs
+      - ZEPPELIN_NOTEBOOK_DIR=/notebook
+    image: apache/zeppelin:0.8.1
+    volumes:
+      - ./logs:/logs
+      - ./notebook:/notebook
+      - ./datasets:/datasets
+    ports:
+     - 8080:8080
